@@ -1,0 +1,455 @@
+============================================================ 
+  PAKISTAN URBAN SPRAWL - PIPELINE LOG                       
+  Started: 22/05/2026 18:37:30.45                                     
+============================================================ 
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1]                                                                                [Stage 2:>                                                          (0 + 1) / 1]                                                                                
+==============================
+  TASK 2 DATA INGESTION
+==============================
+[+] Loading Census Admin2.csv
+    Row Count 435
+root
+ |-- admin3Name_en: string (nullable = true)
+ |-- admin3Pcode: string (nullable = true)
+ |-- admin2Name_en: string (nullable = true)
+ |-- admin2Pcode: string (nullable = true)
+ |-- admin1Name_en: string (nullable = true)
+ |-- admin1Pcode: string (nullable = true)
+ |-- admin0Name_en: string (nullable = true)
+ |-- admin0Pcode: string (nullable = true)
+ |--  Total_pop : string (nullable = true)
+
++-------------+-----------+-------------+-----------+------------------+-----------+-------------+-----------+-----------+
+|admin3Name_en|admin3Pcode|admin2Name_en|admin2Pcode|     admin1Name_en|admin1Pcode|admin0Name_en|admin0Pcode| Total_pop |
++-------------+-----------+-------------+-----------+------------------+-----------+-------------+-----------+-----------+
+|   Abbottabad|    PK20101|   Abbottabad|      PK201|Khyber Pakhtunkhwa|        PK2|     Pakistan|         PK| 1,332,912 |
+|Ahmadupr East|    PK60305|   Bahawalpur|      PK603|            Punjab|        PK6|     Pakistan|         PK| 1,078,683 |
+|Ahmedpur Sial|    PK61201|        Jhang|      PK612|            Punjab|        PK6|     Pakistan|         PK|   433,517 |
+|         Alai|    PK20301|     Batagram|      PK203|Khyber Pakhtunkhwa|        PK2|     Pakistan|         PK|   180,414 |
+|       Alipur|    PK62301| Muzaffargarh|      PK623|            Punjab|        PK6|     Pakistan|         PK|   639,748 |
++-------------+-----------+-------------+-----------+------------------+-----------+-------------+-----------+-----------+
+only showing top 5 rows
+
+[+] WorldPop File Detected pak_ppp_2020.tif
+    Ready for pixel to coordinate transformation in Task 3
+
+Ingestion Script Finished Successfully
+26/05/22 18:38:33 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\Hp\AppData\Local\Temp\spark-11382150-30c8-44a8-b0fa-885118e1ae31\pyspark-2ba06834-1308-4399-a58a-53e4aaf37812
+java.nio.file.NoSuchFileException: C:\Users\Hp\AppData\Local\Temp\spark-11382150-30c8-44a8-b0fa-885118e1ae31\pyspark-2ba06834-1308-4399-a58a-53e4aaf37812
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1764)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:124)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+SUCCESS: The process with PID 14332 (child process of PID 12804) has been terminated.
+SUCCESS: The process with PID 12804 (child process of PID 7380) has been terminated.
+SUCCESS: The process with PID 7380 (child process of PID 10236) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 4][Stage 0:>                                                          (0 + 1) / 4][Stage 0:>                                                          (0 + 4) / 4][Stage 0:============================================>              (3 + 1) / 4][Stage 2:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 4:>                                                          (0 + 4) / 4][Stage 4:=============================>                             (2 + 2) / 4][Stage 4:============================================>              (3 + 1) / 4]                                                                                
+===================================
+  TASK 3 SPATIAL DATA CLEANING
+===================================
+[+] Loading Raster pak_ppp_2020.tif
+[+] Extracting spatial coordinates...
+[+] Extracted 76747610 populated grid cells
+[!] Downsampling to 3 million points for local processing...
+[+] Converting to Distributed Spark DataFrame...
+[+] Applying PySpark Transformations...
+[+] Final Cleaned Row Count 2999985
++--------+--------+-------------------+----+
+|     lon|     lat|         population|year|
++--------+--------+-------------------+----+
+| 64.1275|  26.815|0.11725571006536484|2020|
+|   75.22|32.12333|  4.655585289001465|2020|
+|71.68667|  33.305| 0.4816647171974182|2020|
+|73.85417|34.03917|   2.10196590423584|2020|
+|74.11917|32.64333|  7.271637916564941|2020|
++--------+--------+-------------------+----+
+only showing top 5 rows
+
+[+] Saving optimized Big Data Parquet file to A:\BSIT-6A\pakistan-urban-sprawl\data\processed\cleaned.parquet
+
+Task 3 Completed Successfully
+SUCCESS: The process with PID 10960 (child process of PID 4044) has been terminated.
+SUCCESS: The process with PID 4044 (child process of PID 12636) has been terminated.
+SUCCESS: The process with PID 12636 (child process of PID 3232) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1]                                                                                [Stage 2:>                                                          (0 + 4) / 4][Stage 2:============================================>              (3 + 1) / 4]                                                                                
+===================================
+  TASK 4: FEATURE ENGINEERING
+===================================
+[+] Loading cleaned data from: cleaned.parquet
+[+] Generating Machine Learning Features...
+[+] Features Engineered successfully.
++--------+--------+-------------------+----+-----------+--------+-------------------+
+|     lon|     lat|         population|year|    grid_id|is_urban|      density_score|
++--------+--------+-------------------+----+-----------+--------+-------------------+
+|72.84333| 32.5175| 1.4781049489974976|2020|32.52_72.84|       0| 0.9074941346093497|
+|64.01333|26.79833| 0.1451171636581421|2020| 26.8_64.01|       0|  0.135506958110209|
+|  73.135|  31.605|  8.048717498779297|2020|31.61_73.14|       0| 2.2026230348275546|
+|69.55667|30.34167|0.10607416182756424|2020|30.34_69.56|       0|0.10081695494575636|
+|   73.24|31.36667|  7.975872039794922|2020|31.37_73.24|       0| 2.1945400928626517|
++--------+--------+-------------------+----+-----------+--------+-------------------+
+only showing top 5 rows
+
+[+] Saving ML ready Parquet file to: A:\BSIT-6A\pakistan-urban-sprawl\data\processed\ml_features.parquet
+
+ Sprawl Statistics 
+Total Pixels: 2,999,985
+Urban Pixels: 16,239 (0.54%)
+Rural Pixels: 2,983,746 (99.46%)
+
+Task 4 Completed Successfully!
+26/05/22 18:46:11 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\Hp\AppData\Local\Temp\spark-7ad55378-9f85-48ac-8ab0-c7ed0c39d5ac\pyspark-e81436df-1bec-4950-b8ce-b0d262edfe55
+java.nio.file.NoSuchFileException: C:\Users\Hp\AppData\Local\Temp\spark-7ad55378-9f85-48ac-8ab0-c7ed0c39d5ac\pyspark-e81436df-1bec-4950-b8ce-b0d262edfe55
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1764)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:124)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+SUCCESS: The process with PID 8596 (child process of PID 11788) has been terminated.
+SUCCESS: The process with PID 11788 (child process of PID 11336) has been terminated.
+SUCCESS: The process with PID 11336 (child process of PID 12568) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 4) / 4]                                                                                [Stage 4:>                                                          (0 + 4) / 4][Stage 4:==============>                                            (1 + 3) / 4]                                                                                [Stage 7:>                                                          (0 + 4) / 4][Stage 7:=============================>                             (2 + 2) / 4]                                                                                [Stage 10:>                                                         (0 + 1) / 1]                                                                                [Stage 11:>                                                         (0 + 4) / 4][Stage 11:=============================>                            (2 + 2) / 4]                                                                                [Stage 12:>                                                         (0 + 4) / 4]                                                                                [Stage 14:>                                                         (0 + 4) / 4][Stage 14:==============>                                           (1 + 3) / 4][Stage 14:=============================>                            (2 + 2) / 4][Stage 15:>                                                         (0 + 4) / 4]                                                                                [Stage 16:>                                                         (0 + 4) / 4][Stage 16:=============================>                            (2 + 2) / 4]                                                                                [Stage 18:>                                                         (0 + 4) / 4][Stage 18:==============>                                           (1 + 3) / 4]                                                                                [Stage 20:>                                                         (0 + 4) / 4][Stage 20:==============>                                           (1 + 3) / 4]                                                                                [Stage 22:>                                                         (0 + 4) / 4][Stage 22:===========================================>              (3 + 1) / 4]                                                                                [Stage 24:>                                                         (0 + 4) / 4][Stage 24:===========================================>              (3 + 1) / 4]                                                                                [Stage 29:>                                                         (0 + 1) / 1]                                                                                
+========================================
+  TASK 5 MACHINE LEARNING RANDOM FOREST
+========================================
+[+] Loading dataset from ml_features.parquet...
+[+] Assembling ML Features lat lon density score...
+[+] Splitting Data 80 percent Training 20 percent Testing...
+    Training Rows 2,399,939
+    Testing Rows  600,046
+
+[+] Training Random Forest Classifier This may take a minute...
+[+] Model Training Complete
+
+[+] Evaluating Model on Test Data...
+
+ MODEL PERFORMANCE 
+Accuracy 99.55%
+
+[+] Saving trained model to A:\BSIT-6A\pakistan-urban-sprawl\models\rf_model
+
+Task 5 Completed Successfully
+SUCCESS: The process with PID 4368 (child process of PID 2056) has been terminated.
+SUCCESS: The process with PID 2056 (child process of PID 8996) has been terminated.
+SUCCESS: The process with PID 8996 (child process of PID 10196) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.util.SizeEstimator$ (file:/A:/BSIT-6A/pakistan-urban-sprawl/venv/Lib/site-packages/pyspark/jars/spark-core_2.12-3.5.0.jar) to field java.math.BigInteger.mag
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.util.SizeEstimator$
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+                                                                                [Stage 6:>                                                          (0 + 1) / 1]                                                                                [Stage 9:>                                                          (0 + 4) / 4][Stage 10:>                                                         (0 + 4) / 5][Stage 10:===========>                                              (1 + 4) / 5][Stage 10:=======================>                                  (2 + 3) / 5]                                                                                [Stage 14:>                                                         (0 + 4) / 4][Stage 14:=============================>                            (2 + 2) / 4][Stage 15:===========>                                              (1 + 4) / 5][Stage 15:==============================================>           (4 + 1) / 5][Stage 18:>                                                         (0 + 1) / 1]                                                                                26/05/22 18:50:13 ERROR DiskBlockManager: Exception while deleting local spark dir: C:\Users\Hp\AppData\Local\Temp\blockmgr-367a9fc4-92c8-4d72-911a-f401af46d677
+java.io.IOException: Failed to delete: C:\Users\Hp\AppData\Local\Temp\blockmgr-367a9fc4-92c8-4d72-911a-f401af46d677\29\shuffle_6_23_0.data
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:146)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:129)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.storage.DiskBlockManager.$anonfun$doStop$1(DiskBlockManager.scala:368)
+	at org.apache.spark.storage.DiskBlockManager.$anonfun$doStop$1$adapted(DiskBlockManager.scala:364)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.storage.DiskBlockManager.doStop(DiskBlockManager.scala:364)
+	at org.apache.spark.storage.DiskBlockManager.stop(DiskBlockManager.scala:359)
+	at org.apache.spark.storage.BlockManager.stop(BlockManager.scala:2124)
+	at org.apache.spark.SparkEnv.stop(SparkEnv.scala:95)
+	at org.apache.spark.SparkContext.$anonfun$stop$25(SparkContext.scala:2310)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2310)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2216)
+	at org.apache.spark.api.java.JavaSparkContext.stop(JavaSparkContext.scala:550)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+==================================================
+  TASK 6: DATA-DRIVEN URBAN SPRAWL SIMULATION
+==================================================
+[+] Using Official National Growth Rate: 2.40%
+
+[+] Applying rate to project to the year 2030...
+[+] AI is calculating 2030 urban boundaries...
+[!] Injecting Distributed High-Risk Sprawl Zones for 2030 mapping...
+
+--- 2030 SPRAWL SIMULATION RESULTS ---
+Sprawl Points Identified for Mapping: 5,000
+
+Task 6 (2030 Prediction) Completed Successfully!
+SUCCESS: The process with PID 7368 (child process of PID 12880) has been terminated.
+SUCCESS: The process with PID 12880 (child process of PID 3724) has been terminated.
+SUCCESS: The process with PID 3724 (child process of PID 2308) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1]                                                                                [Stage 2:>                                                          (0 + 1) / 1]                                                                                
+==================================================
+  DEMOGRAPHIC PROJECTIONS (2017 -> 2022)
+==================================================
+Assumed Annual Growth Rate: 2.40%
+
+METRIC             | 2017 (Actual)   | 2022 (Predicted)
+-------------------------------------------------------
+Total Population   | 207,774,522     | 233,933,314    
+Total Male         | 105,965,006     | 119,305,990    
+Total Female       | 101,809,515     | 114,627,324    
+-------------------------------------------------------
+SUCCESS: The process with PID 6000 (child process of PID 8960) has been terminated.
+SUCCESS: The process with PID 8960 (child process of PID 2876) has been terminated.
+SUCCESS: The process with PID 2876 (child process of PID 1760) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1]                                                                                [Stage 4:>                                                          (0 + 1) / 1]                                                                                [Stage 52:>                                                         (0 + 1) / 1]                                                                                [Stage 55:>                                                         (0 + 1) / 1]                                                                                
+======================================================================
+  EXECUTIVE DASHBOARD: 2030 SPRAWL RISK RANKING
+======================================================================
+RANK  | EPICENTER ID  | LATITUDE   | LONGITUDE  | NEW SPRAWL AREA  | IMPACTED POPULATION
+-------------------------------------------------------------------------------------
+1     | Center 11     | 31.4916    | 74.3923    | 1,928 sq units   | 65,996  <-- HIGH RISK
+2     | Center 2      | 24.8903    | 67.199     | 851 sq units     | 31,534  <-- HIGH RISK
+3     | Center 14     | 24.9357    | 66.9018    | 440 sq units     | 16,904  <-- HIGH RISK
+4     | Center 10     | 30.3191    | 71.6161    | 221 sq units     | 1,483
+5     | Center 7      | 34.5343    | 72.1073    | 201 sq units     | 1,524
+6     | Center 6      | 30.3379    | 73.0775    | 200 sq units     | 1,462
+7     | Center 3      | 31.8299    | 72.8878    | 195 sq units     | 1,462
+8     | Center 1      | 33.7487    | 73.1925    | 154 sq units     | 1,498
+9     | Center 4      | 32.497     | 74.116     | 154 sq units     | 1,531
+10    | Center 15     | 29.1598    | 70.7453    | 146 sq units     | 964
+11    | Center 5      | 32.6623    | 70.9817    | 144 sq units     | 688
+12    | Center 12     | 25.283     | 68.8841    | 144 sq units     | 610
+13    | Center 9      | 27.9393    | 68.899     | 114 sq units     | 824
+14    | Center 13     | 26.7959    | 68.1191    | 98 sq units      | 576
+15    | Center 8      | 30.1876    | 66.932     | 10 sq units      | 113
+-------------------------------------------------------------------------------------
+[+] Full Executive Report saved to: risk_ranking_2030.csv
+SUCCESS: The process with PID 7380 (child process of PID 13952) has been terminated.
+SUCCESS: The process with PID 13952 (child process of PID 1672) has been terminated.
+SUCCESS: The process with PID 1672 (child process of PID 6636) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1][Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 4:>                                                          (0 + 1) / 1]                                                                                [Stage 52:>                                                         (0 + 1) / 1]                                                                                
+=======================================================
+  FEATURE 1: K MEANS FUTURE CITY CENTERS (2030)
+=======================================================
+[+] Loading predicted sprawl data from: sprawl_2030.parquet
+[+] Assembling geographic coordinates...
+[+] Running K Means AI to find 15 future city epicenters...
+
+ TOP PREDICTED FUTURE CITY CENTERS (LAT, LON) 
+City Center 1 : Latitude 33.7487 , Longitude 73.1925
+City Center 2 : Latitude 24.8903 , Longitude 67.199
+City Center 3 : Latitude 31.8299 , Longitude 72.8878
+City Center 4 : Latitude 32.497  , Longitude 74.116
+City Center 5 : Latitude 32.6623 , Longitude 70.9817
+City Center 6 : Latitude 30.3379 , Longitude 73.0775
+City Center 7 : Latitude 34.5343 , Longitude 72.1073
+City Center 8 : Latitude 30.1876 , Longitude 66.932
+City Center 9 : Latitude 27.9393 , Longitude 68.899
+City Center 10: Latitude 30.3191 , Longitude 71.6161
+City Center 11: Latitude 31.4916 , Longitude 74.3923
+City Center 12: Latitude 25.283  , Longitude 68.8841
+City Center 13: Latitude 26.7959 , Longitude 68.1191
+City Center 14: Latitude 24.9357 , Longitude 66.9018
+City Center 15: Latitude 29.1598 , Longitude 70.7453
+
+[+] Saved epicenters to: A:\BSIT-6A\pakistan-urban-sprawl\data\predictions\future_city_centers.csv
+Task Completed Successfully!
+SUCCESS: The process with PID 8916 (child process of PID 8420) has been terminated.
+SUCCESS: The process with PID 8420 (child process of PID 5208) has been terminated.
+SUCCESS: The process with PID 5208 (child process of PID 14252) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.util.SizeEstimator$ (file:/A:/BSIT-6A/pakistan-urban-sprawl/venv/Lib/site-packages/pyspark/jars/spark-core_2.12-3.5.0.jar) to field java.math.BigInteger.mag
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.util.SizeEstimator$
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+                                                                                [Stage 6:>                                                          (0 + 1) / 1]                                                                                [Stage 9:>                                                          (0 + 4) / 4][Stage 9:>                                                          (0 + 4) / 4][Stage 9:==============>                                            (1 + 3) / 4][Stage 9:=============================>                             (2 + 2) / 4][Stage 9:============================================>              (3 + 1) / 4]                                                                                [Stage 12:>                                                         (0 + 4) / 4][Stage 12:>                                                         (0 + 4) / 4][Stage 12:==============>                                           (1 + 3) / 4][Stage 12:=============================>                            (2 + 2) / 4][Stage 12:===========================================>              (3 + 1) / 4]                                                                                
+=======================================================
+  FEATURE 3: PERI URBAN SUBURB CLASSIFICATION
+=======================================================
+[+] Loading AI Model...
+[+] Calculating Suburb Probabilities...
+
+ PERI URBAN RESULTS 
+Found 5,477 Peri Urban Suburban transition grid cells
+
+[+] Saved Peri Urban zones to: peri_urban_2030.parquet
+Task Completed Successfully!
+26/05/22 18:56:42 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\Hp\AppData\Local\Temp\spark-da8d4de2-eafc-414f-8715-dbd2a9b660d9\pyspark-04f39fe4-4fba-49d9-8e7a-33dac8cf6148
+java.nio.file.NoSuchFileException: C:\Users\Hp\AppData\Local\Temp\spark-da8d4de2-eafc-414f-8715-dbd2a9b660d9\pyspark-04f39fe4-4fba-49d9-8e7a-33dac8cf6148
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1764)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:124)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117)
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121)
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120)
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+SUCCESS: The process with PID 11864 (child process of PID 11236) has been terminated.
+SUCCESS: The process with PID 11236 (child process of PID 3984) has been terminated.
+SUCCESS: The process with PID 3984 (child process of PID 13752) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.util.SizeEstimator$ (file:/A:/BSIT-6A/pakistan-urban-sprawl/venv/Lib/site-packages/pyspark/jars/spark-core_2.12-3.5.0.jar) to field java.math.BigInteger.mag
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.util.SizeEstimator$
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+                                                                                [Stage 6:>                                                          (0 + 1) / 1]                                                                                [Stage 9:>                                                          (0 + 4) / 4][Stage 9:==============>                                            (1 + 3) / 4]                                                                                [Stage 11:>                                                         (0 + 4) / 4][Stage 11:==============>                                           (1 + 3) / 4][Stage 11:=============================>                            (2 + 2) / 4]                                                                                [Stage 14:>                                                         (0 + 1) / 1]                                                                                [Stage 17:>                                                         (0 + 1) / 1]                                                                                [Stage 65:>                                                         (0 + 1) / 1]                                                                                [Stage 70:>                                                         (0 + 1) / 1]                                                                                
+==================================================
+  MACHINE LEARNING REPORT CARD  
+==================================================
+[+] Testing Random Forest Accuracy...
+
+ RANDOM FOREST SCORES 
+Overall Accuracy : 99.54%
+F1 Score         : 99.46% (Balance of Precision and Recall)
+Status: EXCELLENT (Highly reliable sprawl prediction)
+
+[+] Testing K Means Clustering Quality...
+
+ K MEANS CLUSTERING SCORES 
+Silhouette Score : 0.6775 (Range: negative 1.0 to positive 1.0)
+Status: STRONG (Epicenters are highly distinct and realistic)
+
+==================================================
+SUCCESS: The process with PID 9488 (child process of PID 13408) has been terminated.
+SUCCESS: The process with PID 13408 (child process of PID 8708) has been terminated.
+SUCCESS: The process with PID 8708 (child process of PID 7428) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+A:\BSIT-6A\pakistan-urban-sprawl\src\charts.py:71: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(data=risk_df, x="sprawl_pixels", y="Label",
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 4) / 4]                                                                                [Stage 4:>                                                          (0 + 4) / 4]                                                                                
+=============================================
+  VISUALIZATION: MATPLOTLIB & SEABORN CHARTS
+=============================================
+[+] Generating Chart 1: Population Growth Timeline...
+    Saved -> A:\BSIT-6A\pakistan-urban-sprawl\charts\population_growth.png
+[+] Generating Chart 2: Risk Ranking of Sprawl Epicenters...
+    Saved -> A:\BSIT-6A\pakistan-urban-sprawl\charts\risk_ranking.png
+[+] Generating Chart 3: Urban vs Rural Distribution...
+    Saved -> A:\BSIT-6A\pakistan-urban-sprawl\charts\urban_rural_distribution.png
+[+] Generating Chart 4: Urbanization Rate Trend...
+    Saved -> A:\BSIT-6A\pakistan-urban-sprawl\charts\urbanization_trend.png
+
+[SUCCESS] All Charts Generated Successfully!
+   Find them in: A:\BSIT-6A\pakistan-urban-sprawl\charts/
+SUCCESS: The process with PID 3512 (child process of PID 2116) has been terminated.
+SUCCESS: The process with PID 2116 (child process of PID 9592) has been terminated.
+SUCCESS: The process with PID 9592 (child process of PID 11152) has been terminated.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1]                                                                                Rendering the map layers
+
+ Masterpiece saved Open A:\BSIT-6A\pakistan-urban-sprawl\beautiful_sprawl_map.html
+SUCCESS: The process with PID 3516 (child process of PID 2012) has been terminated.
+SUCCESS: The process with PID 2012 (child process of PID 11488) has been terminated.
+SUCCESS: The process with PID 11488 (child process of PID 13476) has been terminated.
